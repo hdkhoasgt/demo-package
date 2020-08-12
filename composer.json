@@ -1,0 +1,55 @@
+{
+  "name": "hdkhoasgt/demo-package",
+  "description": "A simple laravel package",
+  "keywords": [
+    "hdkhoasgt",
+    "demo-package"
+  ],
+  "homepage": "https://github.com/hdkhoasgt/demo-package",
+  "license": "MIT",
+  "type": "library",
+  "authors": [
+    {
+      "name": "Khoa Hoang",
+      "email": "hdkhoa.sgt@gmail.com",
+      "role": "Developer"
+    }
+  ],
+  "require": {
+    "php": ">=7.2",
+    "illuminate/support": ">=6.0"
+  },
+  "require-dev": {
+    "orchestra/testbench": "^4.0",
+    "phpunit/phpunit": "^8.0"
+  },
+  "autoload": {
+    "psr-4": {
+      "Hdkhoasgt\\DemoPackage\\": "src"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "Hdkhoasgt\\DemoPackage\\Tests\\": "tests"
+    }
+  },
+  "scripts": {
+    "test": "vendor/bin/phpunit",
+    "testdox": "vendor/bin/phpunit --testdox"
+  },
+  "config": {
+    "sort-packages": true
+  },
+  "minimum-stability": "dev",
+  "prefer-stable": true,
+  "extra": {
+    "laravel": {
+      "providers": [
+        "Hdkhoasgt\\DemoPackage\\DemoPackageServiceProvider"
+      ],
+      "aliases": {
+        "DemoPackage": "Hdkhoasgt\\DemoPackage\\DemoPackageFacade"
+      }
+    }
+  }
+}

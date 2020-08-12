@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites>
+  <testsuite name="Test Suite" tests="4" assertions="20" errors="0" warnings="0" failures="0" skipped="0" time="0.123211">
+    <testsuite name="Hdkhoasgt\DemoPackage\Tests\ExampleTest" file="/Users/saigontech-mac01/saigontech/packages/hdkhoasgt/demo-package/tests/ExampleTest.php" tests="4" assertions="20" errors="0" warnings="0" failures="0" skipped="0" time="0.123211">
+      <testcase name="helloMessage" class="Hdkhoasgt\DemoPackage\Tests\ExampleTest" classname="Hdkhoasgt.DemoPackage.Tests.ExampleTest" file="/Users/saigontech-mac01/saigontech/packages/hdkhoasgt/demo-package/tests/ExampleTest.php" line="31" assertions="5" time="0.116316"/>
+      <testcase name="byeMessage" class="Hdkhoasgt\DemoPackage\Tests\ExampleTest" classname="Hdkhoasgt.DemoPackage.Tests.ExampleTest" file="/Users/saigontech-mac01/saigontech/packages/hdkhoasgt/demo-package/tests/ExampleTest.php" line="50" assertions="5" time="0.002661"/>
+      <testcase name="serviceProvider" class="Hdkhoasgt\DemoPackage\Tests\ExampleTest" classname="Hdkhoasgt.DemoPackage.Tests.ExampleTest" file="/Users/saigontech-mac01/saigontech/packages/hdkhoasgt/demo-package/tests/ExampleTest.php" line="69" assertions="2" time="0.002258"/>
+      <testcase name="rejectEmptyFields" class="Hdkhoasgt\DemoPackage\Tests\ExampleTest" classname="Hdkhoasgt.DemoPackage.Tests.ExampleTest" file="/Users/saigontech-mac01/saigontech/packages/hdkhoasgt/demo-package/tests/ExampleTest.php" line="78" assertions="8" time="0.001976"/>
+    </testsuite>
+  </testsuite>
+</testsuites>
