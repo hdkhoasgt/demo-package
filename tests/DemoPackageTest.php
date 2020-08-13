@@ -2,7 +2,7 @@
 
 namespace Hdkhoasgt\DemoPackage\Tests;
 
-use Hdkhoasgt\DemoPackage\DemoPackage;
+use Hdkhoasgt\DemoPackage\Facades\DemoPackage;
 use Orchestra\Testbench\TestCase;
 use Hdkhoasgt\DemoPackage\DemoPackageServiceProvider;
 
@@ -30,18 +30,16 @@ class DemoPackageTest extends TestCase
      */
     public function helloMessage()
     {
-        $demoPackage = new DemoPackage();
-
         // Empty name
-        $this->assertEquals('Hello, .', $demoPackage->hello(''));
-        $this->assertEquals('Hello, .', $demoPackage->hello(null));
+        $this->assertEquals('Hello, .', DemoPackage::hello(''));
+        $this->assertEquals('Hello, .', DemoPackage::hello(null));
 
         // No custom template
-        $this->assertEquals('Hello, Khoa.', $demoPackage->hello('Khoa'));
-        $this->assertEquals('Hello, Khoa Hoang.', $demoPackage->hello('Khoa Hoang'));
+        $this->assertEquals('Hello, Khoa.', DemoPackage::hello('Khoa'));
+        $this->assertEquals('Hello, Khoa Hoang.', DemoPackage::hello('Khoa Hoang'));
 
         // Has custom template
-        $this->assertEquals('Dear Khoa,', $demoPackage->hello('Khoa', 'Dear {name},'));
+        $this->assertEquals('Dear Khoa,', DemoPackage::hello('Khoa', 'Dear {name},'));
     }
 
     /**
@@ -49,18 +47,16 @@ class DemoPackageTest extends TestCase
      */
     public function byeMessage()
     {
-        $demoPackage = new DemoPackage();
-
         // Empty name
-        $this->assertEquals('Bye, .', $demoPackage->bye(''));
-        $this->assertEquals('Bye, .', $demoPackage->bye(null));
+        $this->assertEquals('Bye, .', DemoPackage::bye(''));
+        $this->assertEquals('Bye, .', DemoPackage::bye(null));
 
         // No custom template
-        $this->assertEquals('Bye, Khoa.', $demoPackage->bye('Khoa'));
-        $this->assertEquals('Bye, Khoa Hoang.', $demoPackage->bye('Khoa Hoang'));
+        $this->assertEquals('Bye, Khoa.', DemoPackage::bye('Khoa'));
+        $this->assertEquals('Bye, Khoa Hoang.', DemoPackage::bye('Khoa Hoang'));
 
         // Has custom template
-        $this->assertEquals('Goodbye Khoa!', $demoPackage->bye('Khoa', 'Goodbye {name}!'));
+        $this->assertEquals('Goodbye Khoa!', DemoPackage::bye('Khoa', 'Goodbye {name}!'));
     }
 
     /**

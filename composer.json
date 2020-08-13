@@ -48,7 +48,7 @@
         "Hdkhoasgt\\DemoPackage\\DemoPackageServiceProvider"
       ],
       "aliases": {
-        "DemoPackage": "Hdkhoasgt\\DemoPackage\\DemoPackageFacade"
+        "DemoPackage": "Hdkhoasgt\\DemoPackage\\Facades\\DemoPackage"
       }
     }
   }

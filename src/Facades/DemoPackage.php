@@ -1,13 +1,16 @@
 <?php
 
-namespace Hdkhoasgt\DemoPackage;
+namespace Hdkhoasgt\DemoPackage\Facades;
 
 use Illuminate\Support\Facades\Facade;
 
 /**
+ * @method static string hello(mixed $name, mixed $template = null)
+ * @method static string bye(mixed $name, mixed $template = null)
+ *
  * @see \Hdkhoasgt\DemoPackage\DemoPackage
  */
-class DemoPackageFacade extends Facade
+class DemoPackage extends Facade
 {
     /**
      * Get the registered name of the component.

@@ -2,9 +2,14 @@
 
 namespace Hdkhoasgt\DemoPackage;
 
+use Illuminate\Http\Response;
 use Illuminate\Support\Collection;
 use Illuminate\Support\ServiceProvider;
 
+/**
+ * Class DemoPackageServiceProvider
+ * @package Hdkhoasgt\DemoPackage
+ */
 class DemoPackageServiceProvider extends ServiceProvider
 {
     /**
@@ -20,7 +25,19 @@ class DemoPackageServiceProvider extends ServiceProvider
         // $this->loadMigrationsFrom(__DIR__.'/../database/migrations');
         // $this->loadRoutesFrom(__DIR__.'/routes.php');
 
+        // Register the model factories
+        $this->app->make('Illuminate\Database\Eloquent\Factory')
+            ->load(__DIR__ . '/../database/factories');
+
         if ($this->app->runningInConsole()) {
+            // php artisan vendor:publish --provider="Hdkhoasgt\DemoPackage\DemoPackageServiceProvider" --tag="migrations"
+            if (!class_exists('CreateMessageLogsTable')) {
+                $this->publishes([
+                    __DIR__ . '/../database/migrations/create_message_logs_table.php.stub' => database_path('migrations/' . date('Y_m_d_His',
+                            time()) . '_create_message_logs_table.php'),
+                ], 'migrations');
+            }
+
             $this->publishes([
                 __DIR__ . '/../config/config.php' => config_path('demo-package.php'),
             ], 'config');
@@ -44,7 +61,7 @@ class DemoPackageServiceProvider extends ServiceProvider
             // $this->commands([]);
         }
 
-        // Register a macro, extending the Illuminate\Collection class
+        // Register a macro, extending the Illuminate\Support\Collection class
         Collection::macro('rejectEmptyFields', function () {
             return $this->reject(function ($entry) {
                 return $entry === null || $entry === '';
