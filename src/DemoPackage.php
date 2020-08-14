@@ -11,18 +11,20 @@ class DemoPackage
     /**
      * @var string
      */
-    private $helloMessage = 'Hello, {name}.';
+    private $helloMessage = null;
 
     /**
      * @var string
      */
-    private $byeMessage = 'Bye, {name}.';
+    private $byeMessage = null;
 
     /**
      * DemoPackage constructor.
      */
     public function __construct()
     {
+        $this->helloMessage = config('demo-package.messages.hello');
+        $this->byeMessage = config('demo-package.messages.bye');
     }
 
     /**
