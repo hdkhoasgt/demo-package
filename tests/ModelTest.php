@@ -56,7 +56,7 @@ class ModelTest extends TestCase
     }
 
     /**
-     * @test
+     *
      */
     public function factories()
     {
