@@ -22,7 +22,7 @@ class DemoPackageServiceProvider extends ServiceProvider
          */
         // $this->loadTranslationsFrom(__DIR__.'/../resources/lang', 'demo-package');
         // $this->loadViewsFrom(__DIR__.'/../resources/views', 'demo-package');
-        // $this->loadMigrationsFrom(__DIR__.'/../database/migrations');
+        $this->loadMigrationsFrom(__DIR__ . '/../database/migrations');
         // $this->loadRoutesFrom(__DIR__.'/routes.php');
 
         // Register the model factories
@@ -38,6 +38,7 @@ class DemoPackageServiceProvider extends ServiceProvider
                 ], 'migrations');
             }
 
+            // Publishing the configurations.
             $this->publishes([
                 __DIR__ . '/../config/config.php' => config_path('demo-package.php'),
             ], 'config');
